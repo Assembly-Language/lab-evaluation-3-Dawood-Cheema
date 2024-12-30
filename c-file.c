@@ -8,7 +8,7 @@
 extern "C" {
 #endif
 
-void __stdcall asmfunc(int p1 ,int p2);
+void __stdcall asmfunc(int *myarray ,int *count);
 
 #ifdef __cplusplus
 }
@@ -17,14 +17,26 @@ void __stdcall asmfunc(int p1 ,int p2);
 
 int main() {
     system("cls");
-    int abc;
-    printf("assembly proc calling from  from C! \n");
+    int myarray[]={-2,-1,0,1,2,3};
+    int count=0;
+    printf("the array is: ");
+    for(int i=0;i<10;i++){
+        printf("%d" , myarray[i]);
+        print(" ");
+    }
+
+    printf {";\n"};
 getch();
 
     
-    asmfunc(3,5); //assembly proc calling
-   
-   getch();
+    asmfunc(myarray, &count);
+    if(count==0){
+        printf(there is no positive number);
+        return0;
+    } 
+    else{
+    printf(The total Positive numbers are:%d\n,count);
+}
     
     
     printf("back to  C! \n"); // printing in c
