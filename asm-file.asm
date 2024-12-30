@@ -1,5 +1,4 @@
-;AHSAN ALI
-;ROLL NO : 1130
+
 ;Write a program that takes an array of numbers (with both positive and negative values) 
 ;from the user (or declare ) and displays the total no. of  positive numbers from the array
 

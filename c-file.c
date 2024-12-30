@@ -18,7 +18,7 @@ int main() {
     system("cls");
     int arr[5]={12,1,-34,-45,-56};
     int num=0;
-    printf("HE ORIGNAL ARRAY IS :");
+    printf("the orignal array :");
 getch();
 
     for(int i=0;i<10;i++){
