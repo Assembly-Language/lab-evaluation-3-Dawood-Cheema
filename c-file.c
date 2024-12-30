@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 
 
@@ -8,7 +7,7 @@
 extern "C" {
 #endif
 
-void __stdcall asmfunc(int *myarray ,int *count);
+void __stdcall asmfunc(int arr ,int * p2);
 
 #ifdef __cplusplus
 }
@@ -17,29 +16,21 @@ void __stdcall asmfunc(int *myarray ,int *count);
 
 int main() {
     system("cls");
-    int myarray[]={-2,-1,0,1,2,3};
-    int count=0;
-    printf("the array is: ");
-    for(int i=0;i<10;i++){
-        printf("%d" , myarray[i]);
-        print(" ");
-    }
-
-    printf {";\n"};
+    int arr[5]={12,1,-34,-45,-56};
+    int num=0;
+    printf("HE ORIGNAL ARRAY IS :");
 getch();
 
+    for(int i=0;i<10;i++){
+        printf("%d",arr[i]);
+        printf(" ");
+    }
+    asmfunc(arr,&num); //assembly proc calling
+   
+   getch();
     
-    asmfunc(myarray, &count);
-    if(count==0){
-        printf(there is no positive number);
-        return0;
-    } 
-    else{
-    printf(The total Positive numbers are:%d\n,count);
-}
-    
-    
-    printf("back to  C! \n"); // printing in c
+    printf("\n");
+    printf("the total number of posiive values is :  %d \n ", num); // printing in c
     
   
     

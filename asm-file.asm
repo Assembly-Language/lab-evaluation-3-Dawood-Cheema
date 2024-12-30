@@ -1,37 +1,35 @@
-
+;AHSAN ALI
+;ROLL NO : 1130
+;Write a program that takes an array of numbers (with both positive and negative values) 
+;from the user (or declare ) and displays the total no. of  positive numbers from the array
 
 INCLUDE Irvine32.inc
 .data
+;public asmfunc
+msg db "assebly procedure end now",0
 
 
+.code 
+asmfunc PROC p1:DWORD, p2:DWORD
+    
+   mov esi,p1
+   mov edi,p2
+
+   mov ecx,10
+
+ pass:
+    mov eax,[esi]
+    test eax, 8000h
+    jNz skip
+    mov eax,[edi]
+    add eax,1
+    mov [edi],eax
 
 
-.code
-asmfunc PROC  a1:ptr dword,a2:ptr dword , a3:dword
-
-mov esi,a1
-mov ecx,a2
-mov ebx,a3
-
-mov eax ,0
-mov edi,0
-mov edx,10
-
-positive:
-mov eax ,dword ptr [esi]
-test eax ,8000h
-jnz skip
-
-
-inc edi
 skip:
+    add esi,4
+    loop pass
 
-add esi,4
-dec edx
-jnz positive
-
-mov dword ptr [ebx] , edi
-   
     ret
 asmfunc ENDP
 end
